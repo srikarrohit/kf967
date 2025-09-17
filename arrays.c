@@ -45,6 +45,24 @@ void insertElement(int array[], int key,int idx,int size,int newArray[]){
         newArray[i]=array[i-1];//idx to size-1 for array
     }
 }
+void deleteElement(int array[],int idx,int size,int newArray[]){
+    for(int i=0;i<idx;i++){
+        newArray[i]=array[i];
+    }
+    for(int i=idx+1;i<size;i++){
+        newArray[i-1]=array[i];
+    }
+}
+void plusOne(int arr[],int size){
+    for(int i=0;i<size;i++){
+        arr[i]+=1;
+    }
+}
+void swap(int *x, int *y){
+    int temp=*x;
+    *x=*y;
+    *y=temp;
+}
 int main(){
     int arr[5]={1,2,3,4,5};
     int arr1[5];
@@ -65,4 +83,29 @@ int main(){
     for(int i=0;i<6;i++){
         printf("%d\t",newArr[i]);
     }
+    printf("\n");
+    plusOne(arr,5);//pass ny reference
+    for(int i=0;i<5;i++){
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
+    swap(&arr[0],&arr[1]);
+    for(int i=0;i<5;i++){
+        printf("%d\t",arr[i]);
+    }
+    int newArray[4];
+    printf("\n");
+    deleteElement(arr,3,5,newArray);
+    for(int i=0;i<4;i++){
+        printf("%d\t",newArray[i]);
+    }
 }
+//plusone
+//it arr and size
+//void
+//each element+1
+//main -> will this array in main be updated or not?
+
+//swap using pointers,
+//inputs - *x,*y
+//swap the two elements in main
