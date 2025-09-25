@@ -14,3 +14,18 @@ int lengthOfLastWord(char* s) {
     while(end >= news && !isspace(*end))end--;
     return strlen(end+1);
 }
+
+//Vansh's solution
+int lengthOfLastWord(char* s) {
+int l = 0;
+int i = strlen(s)-1;
+
+while (i>=0 && s[i]==' '){
+i--;
+}
+while(i>=0 && s[i]!=' '){
+l++;
+i--;
+}
+return l;
+}
